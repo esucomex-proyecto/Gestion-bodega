@@ -80,27 +80,29 @@
   </div>
       <div class="w-100">
         <div class="row w-50 mx-auto" id="servicios-fila-1">  
-        <form action="">
+          <form method="post"  id="formulario">
             <div class="mb-3">
-                <input type="email" class="form-control" id="Email" placeholder="nombre@ejemplos.com" required>
+                <input type="email" class="form-control" id="email" placeholder="nombre@ejemplos.com" >
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" id="Nombre" placeholder="Juanito Perez" required>
+                <input type="text" class="form-control" id="nombre" placeholder="Juanito Perez">
             </div>
             <div class="mb-3">
-                <input type="tel" class="form-control" id="Telefono" placeholder="+56900000000" required>
+                <input type="number" class="form-control" id="telefono" placeholder="+56900000000">
             </div>
             <div class="mb-3">
               
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder=" Escribe tu mensaje "></textarea>
+              <textarea class="form-control" id="txtarea" rows="3" placeholder=" Escribe tu mensaje "></textarea>
             </div>
 
             <div class = mb-3>
-                <button class= "btn btn-dark text-warning " type="button">Enviar Mensaje</button> 
+                <button class= "btn btn-dark text-warning " id="enviar" type="submit" value="Enviar">Enviar Mensaje</button> 
                 
-                
+                <div id="error" class="alert alert-danger" role="alert"></div>
             </div>
-        </form>  
+
+
+            
         </div> 
       </div>
     </section>
@@ -119,6 +121,7 @@
             <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>  
         </div>
       </footer>   
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> 
           <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
           <script src="main.js"></script>
@@ -127,6 +130,8 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+        <script src="funciones.js"></script>
         </body>
 </html> 
         
