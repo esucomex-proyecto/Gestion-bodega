@@ -22,7 +22,7 @@ $(document).ready(function(){
     }
 
     if ($("#txtarea").val().trim().length==0){
-        
+
     mensaje ="El mensaje esta en blanco";
     }
 
@@ -35,4 +35,3 @@ $(document).ready(function(){
     }
 });
 });
-
