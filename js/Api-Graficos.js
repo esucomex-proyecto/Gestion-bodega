@@ -1,3 +1,46 @@
+$(document).ready(function () {
+
+  var datosDolar = []; //Arreglo
+  var option ={
+      animationEnable:true, //Tendra una animacion el grafico
+      theme:"light2",
+      title:{ text:"El valor del Dolar del ultimo mes"},//Titulo del Grafico
+      axisX:{ valueFormtString:"DD MM YYY"},//Le doy un formate y le quiero en dia mes y año
+      axisY:{title:"Precio Dolar",titleFontSize:24,},
+      data:[{
+          type:"spline",
+          dataPoints:datosDolar //Mostrara el arreglo DatosDolar
+      }]
+    
+  
+  }
+ 
+  
+      $.ajax({
+          type: "GET",
+          url: "https://mindicador.cl/api/dolar",
+          dataType: "json", //El tipo de datos que quiero traer 
+          succes: function (datosD) {
+              //console.log(datosD);
+              let datosApi = datosD.serie;
+             // console.log(datosApi);
+              for (var iterador=0;iterador<datosApi.length;iterador++){
+                 datosDolar,push({
+                     x: new Date(datosApi[iterador].fecha),
+                     y: datosApi[iterador].valor,
+                 });
+                 
+                  // console.log(datosApi[iterador].fecha);
+                  //console.log(datosApi[iterador].valor);
+              }
+              $("#contenedor".CanvasJSChart(option));
+  
+          }
+        
+      });
+  
+  }); 
+
 
 
 /*
@@ -45,49 +88,3 @@ $("#et").mouseover(function(){
 }); */
 
 
-
-
-
-
-$(document).ready(function () {
-
-  var datosDolar = []; //Arreglo
-  var option ={
-      animationEnable:true, //Tendra una animacion el grafico
-      theme:"light2",
-      title:{ text:"El valor del Dolar del ultimo mes"},//Titulo del Grafico
-      axisX:{ valueFormtString:"DD MM YYY"},//Le doy un formate y le quiero en dia mes y año
-      axisY:{title:"Precio Dolar",titleFontSize:24,},
-      data:[{
-          type:"spline",
-          dataPoints:datosDolar //Mostrara el arreglo DatosDolar
-      }]
-    
-  
-  }
- 
-  
-      $.ajax({
-          type: "GET",
-          url: "https://mindicador.cl/api/dolar",
-          dataType: "json", //El tipo de datos que quiero traer 
-          succes: function (datosD) {
-              //console.log(datosD);
-              let datosApi = datosD.serie;
-             // console.log(datosApi);
-              for (var iterador=0;iterador<datosApi.length;iterador++){
-                 datosDolar,push({
-                     x: new Date(datosApi[iterador].fecha),
-                     y: datosApi[iterador].valor,
-                 });
-                 
-                  // console.log(datosApi[iterador].fecha);
-                  //console.log(datosApi[iterador].valor);
-              }
-              $("#contenedor".CanvasJSChart(option));
-  
-          }
-        
-      });
-  
-  }); 
