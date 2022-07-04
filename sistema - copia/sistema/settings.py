@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 STATICFILES_DIRS=['D:/python/Proyecto_bodega/sistema/bodega/templates/paginas/static']
 STATICFILES_DIRS=['C:/Users/LENOVO/Documents/GitHub/Gestion-bodega/Gestion-bodega/sistema/bodega/templates/paginas/static']
 # Application definition
-##
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
