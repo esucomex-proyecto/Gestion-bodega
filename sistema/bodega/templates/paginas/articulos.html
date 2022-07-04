@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="row">
+        <nav class="container-fluid bg-dark d-flex justify-content-center">
+            <p class="text-warning mb-0 p-2 fs-4"><strong>Listado de articulos</strong></p>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <tr>
+                    
+                    <td><strong>Nombre</strong></td>
+                    <td><strong>Modelo</strong></td>
+                    <td><strong>Categoria</strong></td>
+                    <td><strong>Ubicacion</strong></td>
+                    <td><strong></strong></td>
+                </tr>
+
+                {%for ve in articulos%}
+                <tr>
+                    
+                    <td>{{ve.Nombre}}</td>
+                    <td>{{ve.Modelo}}</td>
+                    <td>{{ve.Categoria}}</td>
+                    <td>{{ve.Ubicacion}}</td>
+                    <td><a href="{%url 'form_mod_articulo' ve.id%}" class = "btn btn-success btn-sm">Modificar</a></td>
+                    <td><a href="{%url 'eliminar_articulo' ve.id%}" class = "btn btn-danger btn-sm">Eliminar</a></td>
+                </tr>
+                {%endfor%}
+                <div class="d-flex justify-content-center" >
+                    <a href="{% url 'home' %}"><strong>Inicio</strong></a>
+            
+            </table>
+          
+            <a href="{%url 'form_articulo'%}" class = "btn btn-outline-primary" >Agregar articulos</a> 
+            <br>
+            <br>
+            
+        </div>
+        
+    </div>
+   
