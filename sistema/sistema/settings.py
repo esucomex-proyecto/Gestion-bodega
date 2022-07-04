@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 STATICFILES_DIRS=['D:/python/Proyecto_bodega/sistema/bodega/templates/paginas/static']
-STATICFILES_DIRS=['C:/Users/LENOVO/Documents/GitHub/Gestion-bodega/Gestion-bodega/sistema/bodega/templates/paginas/static']
+STATICFILES_DIRS=['C:/Users/erfad/Documents/GitHub/Gestion-bodega/Gestion-bodega/sistema/bodega/templates/paginas/static']
 # Application definition
 ##
 INSTALLED_APPS = [
@@ -121,7 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'bodega/static/'
+STATIC_URL = '/static/'
 
 #STATICFILES_DIRS = (os.path.join(BASE_DIR,'bodega\static'),)
 # Default primary key field type
